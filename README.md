@@ -11,4 +11,4 @@ This project analyzes NBA player performance using Python and data science techn
 - Python
 - Pandas
 - NumPy
-- Matplotlib / Seaborn
+- Matplotlib / Seaborn 
