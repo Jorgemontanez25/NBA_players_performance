@@ -14,6 +14,17 @@ For this project, I use the **NBA Database** dataset from Kaggle — a comprehen
 🔗 Dataset source:  
 https://www.kaggle.com/datasets/wyattowalsh/basketball
 
+## ⬇️ Data Download & Setup
+The raw dataset is provided as a **SQLite database** and is not included in this repository.
+
+1. Download the dataset from Kaggle:  
+   https://www.kaggle.com/datasets/wyattowalsh/basketball
+2. Place the database file here:  
+   `data/raw/NBA.sqlite`
+3. Run the notebooks in `notebooks/` to reproduce the analysis.
+
+---
+
 ### Dataset Overview
 - 🏀 **30 NBA teams**
 - 👤 **4,800+ players**
