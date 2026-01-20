@@ -1,0 +1,15 @@
+# databases
+*.sqlite
+*.sqlite3
+*.db
+
+# data folders
+data/raw/
+data/processed/
+
+# notebooks
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
