@@ -1,73 +1,142 @@
-# 🏀 NBA Players Performance Analysis
+# 🏀 NBA Players Performance Analysis & Modeling
 
-📊 This project focuses on the analysis of NBA player performance using Python and modern data science techniques.  
-The objective is to extract meaningful insights from player statistics through structured data processing, exploratory analysis, and clear visual interpretation.
+📊 This project implements an end-to-end data science workflow on historical NBA data — from raw SQL ingestion and feature engineering to exploratory analysis, visualization, and predictive modeling.
 
-This repository is designed as a **portfolio project**, demonstrating practical skills in data analysis, data manipulation, and visualization following industry best practices.
+The objective is to extract meaningful insights from player performance and build models that predict scoring outcomes using real game statistics.
+
+This repository is designed as a professional portfolio project, demonstrating practical skills in:
+
+- Data engineering
+- Feature engineering
+- Exploratory Data Analysis (EDA)
+- Statistical visualization
+- Machine learning modeling
+- Reproducible workflows
 
 ---
 
 ## 📦 Dataset: NBA Database (Kaggle)
 
-For this project, I use the **NBA Database** dataset from Kaggle — a comprehensive, historical dataset containing professional NBA game and player statistics.
+This project uses the **NBA Database** dataset from Kaggle — a comprehensive historical dataset containing professional NBA game and player statistics.
 
-🔗 Dataset source:  
+Dataset source:  
 https://www.kaggle.com/datasets/wyattowalsh/basketball
 
-## ⬇️ Data Download & Setup
-The raw dataset is provided as a **SQLite database** and is not included in this repository.
+### Dataset Overview
+- 🏀 30 NBA teams
+- 👤 4,800+ players
+- 📆 65,000+ games since 1946
+- 📊 Play-by-play + box scores
+- 📋 Multiple relational SQL tables
 
-1. Download the dataset from Kaggle:  
-   https://www.kaggle.com/datasets/wyattowalsh/basketball
-2. Place the database file here:  
-   `data/raw/NBA.sqlite`
-3. Run the notebooks in `notebooks/` to reproduce the analysis.
+This structure enables event-level analytics and player-level modeling.
 
 ---
 
-### Dataset Overview
-- 🏀 **30 NBA teams**
-- 👤 **4,800+ players**
-- 📆 **65,000+ games**, dating back to the **1946–47 NBA season**
-- 📊 Detailed **box scores** and statistical records
-- 📋 Multiple related tables including player stats, team information, and game outcomes
+## ⬇️ Data Setup
 
-This rich dataset enables analyses such as:
-- Player performance trends across seasons
-- Game outcome patterns and team comparisons
-- Advanced statistical exploration and visualization
-- Potential predictive modeling for wins and losses
+The raw SQLite database is not included due to size (~2GB).
 
-The data is provided in **SQL and CSV formats**, making it well-suited for analysis using Python tools such as Pandas and SQLite.
+### Steps
+1. Download the dataset from Kaggle
+2. Place the file at: `data/raw/NBA.sqlite`
+3. Run notebooks sequentially inside the `notebooks/` folder
 
 ---
 
 ## 🎯 Objectives
-- 🧹 Clean and preprocess raw NBA player performance data
-- 📈 Explore statistical trends and relationships between player metrics
-- 🏆 Compare player performance using descriptive statistics and visual analysis
-- 🖼️ Communicate insights effectively through clear, well-designed visualizations
+
+- Clean and preprocess raw play-by-play data
+- Engineer player-level features (points, rebounds, game context)
+- Explore trends across players and seasons
+- Visualize performance distributions
+- Build predictive models for scoring outcomes (20+ points)
+- Evaluate models using ROC-AUC and classification metrics
 
 ---
 
 ## 📁 Project Structure
-- **🧹 Data Cleaning & Preprocessing**  
-  Handling missing values, data types, and feature preparation
-- **🔍 Exploratory Data Analysis (EDA)**  
-  Statistical summaries and visual exploration of player metrics
-- **📊 Performance Analysis**  
-  Player comparisons and performance trend analysis
-- **🎨 Visualization**  
-  Clear and informative charts supporting analytical findings
+
+```
+NBA_players_performance/
+│
+├── data/
+│   ├── raw/           # SQLite database (not tracked)
+│   └── processed/     # Engineered feature tables
+│
+├── notebooks/
+│   ├── 01_eda.ipynb        # Feature engineering
+│   ├── 02_analysis.ipynb   # Visualization & insights
+│   └── 03_modeling.ipynb   # ML models & evaluation
+│
+├── figures/            # Saved plots
+├── src/                # Reusable scripts
+└── README.md
+```
+
+---
+
+## 🧠 Workflow
+
+### 01 — EDA & Feature Engineering
+- Extract scoring events from play-by-play
+- Compute player points per game
+- Derive rebound counts
+- Merge season and game context
+- Produce a clean modeling-ready feature table
+
+### 02 — Analysis
+- Points distributions
+- Player comparisons
+- Season trends
+- Regular vs playoff performance
+- Rebounds exploration as additional signals
+
+### 03 — Modeling
+- Target: 20+ points classification
+- Logistic Regression baseline
+- Random Forest benchmark
+- Preprocessing pipelines (encoding + scaling)
+- ROC-AUC and confusion matrix evaluation
+
+---
+
+## 📊 Key Results
+
+- Built player-level features directly from raw event data
+- Engineered rebounds as additional predictive signals
+- Logistic Regression & Random Forest achieved ROC-AUC ≈ **0.69**
+- Identified class imbalance as the main modeling challenge
+- Demonstrated a complete pipeline from SQL → features → modeling
 
 ---
 
 ## 🛠️ Tools & Technologies
-- 🐍 **Python**
-- 🐼 **Pandas** – data manipulation and analysis  
-- 🔢 **NumPy** – numerical computing  
-- 📉 **Matplotlib & Seaborn** – data visualization  
-- 📓 **Jupyter Notebook** – interactive analysis and reporting
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib / Seaborn
+- scikit-learn
+- SQLite
+- Jupyter Notebook
+
+---
+
+## 🚀 Future Work
+
+- Add advanced stats (minutes, shot attempts, efficiency metrics)
+- Create rolling averages and recent-form features
+- Handle class imbalance (class weights / SMOTE)
+- Try Gradient Boosting (XGBoost / LightGBM)
+- Perform time-based validation by season
+- Deploy model as API or dashboard
+
+---
+
+## 👤 Author
+
+Portfolio project showcasing practical data engineering, analytics, and machine learning skills applied to real-world sports data.
 
 
 
