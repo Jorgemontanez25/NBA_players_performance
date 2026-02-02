@@ -1,142 +1,106 @@
-# 🏀 NBA Players Performance Analysis & Modeling
+# 🏀 NBA Player Performance Analysis & Modeling
 
-📊 This project implements an end-to-end data science workflow on historical NBA data — from raw SQL ingestion and feature engineering to exploratory analysis, visualization, and predictive modeling.
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-Numerical%20Computing-013243?logo=numpy)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikit-learn)
+![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?logo=sqlite)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter)
+![Status](https://img.shields.io/badge/Project-Portfolio-success)
 
-The objective is to extract meaningful insights from player performance and build models that predict scoring outcomes using real game statistics.
+End-to-end **data science project** analyzing historical NBA data to engineer player features, explore performance trends, and build predictive models for scoring outcomes.
 
-This repository is designed as a professional portfolio project, demonstrating practical skills in:
+This project demonstrates practical skills in:
 
-- Data engineering
-- Feature engineering
+- Data engineering (SQL → features)
+- Feature engineering from event-level data
 - Exploratory Data Analysis (EDA)
-- Statistical visualization
+- Visualization
 - Machine learning modeling
-- Reproducible workflows
+- Reproducible pipelines
 
 ---
 
-## 📦 Dataset: NBA Database (Kaggle)
+## 🚀 Project Highlights
 
-This project uses the **NBA Database** dataset from Kaggle — a comprehensive historical dataset containing professional NBA game and player statistics.
+- Processed **65k+ NBA games** from a 2GB SQLite database
+- Engineered **player-level features** from play-by-play events (points, rebounds, context)
+- Built **analysis-ready dataset** for modeling
+- Trained **Logistic Regression & Random Forest**
+- Achieved **ROC-AUC ≈ 0.69 baseline**
+- Identified class imbalance & feature limitations as key bottlenecks
 
-Dataset source:  
+---
+
+## 📦 Dataset
+
+NBA historical database from Kaggle  
 https://www.kaggle.com/datasets/wyattowalsh/basketball
 
-### Dataset Overview
-- 🏀 30 NBA teams
-- 👤 4,800+ players
-- 📆 65,000+ games since 1946
-- 📊 Play-by-play + box scores
-- 📋 Multiple relational SQL tables
-
-This structure enables event-level analytics and player-level modeling.
+### Setup
+1. Download dataset
+2. Place file at `data/raw/NBA.sqlite`
+3. Run notebooks sequentially
 
 ---
 
-## ⬇️ Data Setup
-
-The raw SQLite database is not included due to size (~2GB).
-
-### Steps
-1. Download the dataset from Kaggle
-2. Place the file at: `data/raw/NBA.sqlite`
-3. Run notebooks sequentially inside the `notebooks/` folder
-
----
-
-## 🎯 Objectives
-
-- Clean and preprocess raw play-by-play data
-- Engineer player-level features (points, rebounds, game context)
-- Explore trends across players and seasons
-- Visualize performance distributions
-- Build predictive models for scoring outcomes (20+ points)
-- Evaluate models using ROC-AUC and classification metrics
-
----
-
-## 📁 Project Structure
+## 📁 Repository Structure
 
 ```
-NBA_players_performance/
-│
-├── data/
-│   ├── raw/           # SQLite database (not tracked)
-│   └── processed/     # Engineered feature tables
-│
-├── notebooks/
-│   ├── 01_eda.ipynb        # Feature engineering
-│   ├── 02_analysis.ipynb   # Visualization & insights
-│   └── 03_modeling.ipynb   # ML models & evaluation
-│
-├── figures/            # Saved plots
-├── src/                # Reusable scripts
-└── README.md
+data/
+ ├── raw/           # SQLite database (not tracked)
+ └── processed/     # Engineered features
+
+notebooks/
+ ├── 01_eda.ipynb        # Feature engineering
+ ├── 02_analysis.ipynb   # Visualization & insights
+ └── 03_modeling.ipynb   # ML models & evaluation
+
+figures/            # Saved charts
+src/                # Helper scripts
 ```
 
 ---
 
 ## 🧠 Workflow
 
-### 01 — EDA & Feature Engineering
-- Extract scoring events from play-by-play
-- Compute player points per game
-- Derive rebound counts
-- Merge season and game context
-- Produce a clean modeling-ready feature table
+### 01 — Feature Engineering
+- Extract scoring & rebound events
+- Aggregate player stats per game
+- Merge season context
+- Export modeling-ready table
 
 ### 02 — Analysis
-- Points distributions
 - Player comparisons
-- Season trends
+- Distribution analysis
+- Seasonal trends
 - Regular vs playoff performance
-- Rebounds exploration as additional signals
 
 ### 03 — Modeling
-- Target: 20+ points classification
+- Target: predict **20+ point games**
 - Logistic Regression baseline
 - Random Forest benchmark
-- Preprocessing pipelines (encoding + scaling)
-- ROC-AUC and confusion matrix evaluation
+- ROC-AUC, confusion matrix, class imbalance analysis
 
 ---
 
-## 📊 Key Results
+## 🛠️ Tech Stack
 
-- Built player-level features directly from raw event data
-- Engineered rebounds as additional predictive signals
-- Logistic Regression & Random Forest achieved ROC-AUC ≈ **0.69**
-- Identified class imbalance as the main modeling challenge
-- Demonstrated a complete pipeline from SQL → features → modeling
+Python • Pandas • NumPy • Matplotlib • Seaborn • scikit-learn • SQLite • Jupyter
 
 ---
 
-## 🛠️ Tools & Technologies
+## 📈 Future Improvements
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib / Seaborn
-- scikit-learn
-- SQLite
-- Jupyter Notebook
+- Rolling averages & advanced stats
+- Minutes played / shot attempts
+- Class balancing (SMOTE / weights)
+- Gradient boosting models (XGBoost / LightGBM)
+- Time-series validation
 
 ---
 
-## 🚀 Future Work
-
-- Add advanced stats (minutes, shot attempts, efficiency metrics)
-- Create rolling averages and recent-form features
-- Handle class imbalance (class weights / SMOTE)
-- Try Gradient Boosting (XGBoost / LightGBM)
-- Perform time-based validation by season
-- Deploy model as API or dashboard
-
----
 
 ## 👤 Author
 
-Portfolio project showcasing practical data engineering, analytics, and machine learning skills applied to real-world sports data.
-
-
-
+Data science portfolio project showcasing applied analytics and machine learning skills on real-world sports data.
